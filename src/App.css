@@ -1,0 +1,237 @@
+/* Apply box-sizing globally */
+
+body, * {
+  box-sizing: border-box;
+}
+
+.cartBody {
+  background: #efefef;
+  padding-top: 90px;
+}
+.headerNav {
+  padding: 20px;
+  background: #2b2b4f;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+.cartListBlok {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cardItems {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  margin: 12px;
+  padding: 30px 15px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 7px #ccc;
+  min-height: 400px; /* Set a minimum height to ensure consistent card height */
+  position: relative;
+}
+
+.cardItems .imgBlock {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.cardItems .imgBlock img {
+  width: 150px;
+  min-width: 160px;
+  height: fit-content;
+  max-height: 100%;
+}
+
+.cardItems .titleText {
+  font-size: 19px;
+  line-height: 25px;
+}
+
+.cardItems .price {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 15px 0;
+}
+
+.cardItems .rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #FFA726;
+  color: #fff;
+  font-size: 14px;
+  padding: 0px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.cardItems .addToCartBtn {
+  width: 100%;
+  background: #375b6c;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  align-self: flex-end;
+  border-radius: 25px;
+}
+
+.cardItems .addToCartBtn:hover,.cardItems .addToCartBtn:active {
+  background: #607d8b;
+  color: #fff;
+}
+
+.itemsDetailBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1; 
+}
+
+/* sidebar for cart Items */
+
+.sidebar-overlay{
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.sidebar-overlay.active{
+  opacity: 1;
+  visibility: visible;
+}
+.btnCart{
+  background: #FFC107;
+  color: #2f2f2f;
+  padding: 6px 20px;
+  font-weight: 500;
+}
+.btnCart:hover,.btnCart:active{
+  background: #ffe186;
+  box-shadow: 0px 1px 12px #FFC107;
+  color: #000;
+}
+.cartSidebar{
+  position: fixed;
+  right: -100%;
+  top: 70px;
+  height: calc(100vh - 70px);
+  width: 700px;
+  background: #ffffff;
+  z-index: 1;
+  box-shadow: 0px 0px 12px #b1b1b1;
+  border-radius: 50px 0 0 50px;
+  transition: 0.5s;
+}
+.cartSidebar.active{
+  right: 0;
+}
+.itemsWrapper{
+  height: calc(100% - 99px);
+  overflow: auto;
+}
+.closeBtnToggle{
+  position: absolute;
+  background: #e91e63;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 17px;
+  color: #fff;
+  border: 0;
+  font-weight: 500;
+  box-shadow: 0px 0px 6px #4f4f4f;
+}
+.closeBtnToggle:hover,.closeBtnToggle:active{
+  transform: scale(1.2);
+
+    transition: .1s ease-in;
+}
+.cartItemsListed{
+    padding: 30px 15px 0;
+}
+.addedcartItems{
+    width: 100%;
+    padding: 30px 15px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 7px #ccc;
+    
+}
+.addedcartItems .imgBlock{
+  height: 200px;
+  width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+}
+.additemDetailBlock .titleText{
+  font-size: 21px;
+  font-weight: 500;
+}
+.additemDetailBlock .itemsDetail{
+  padding: 0 20px 0 10px;
+}
+.additemDetailBlock .titleText{
+  font-size: 21px;
+  font-weight: 500;
+}
+.additemDetailBlock .priceBlock{
+  font-size: 21px;
+    font-weight: 600;
+}
+.additemDetailBlock .rating{
+  color: #FF9800;
+    margin-top: 5px;
+}
+.additemDetailBlock .categoryText{
+  margin: 10px 0px;
+  color: #1c79a4;
+  font-weight: 500;
+  font-size: 18px;
+}
+.additemDetailBlock .description{
+  font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    color: #989898;
+}
+.priceBlock .quantityBlock{
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+}
+.cartItemsListed .totalPrice{
+  font-size: 25px;
+    font-weight: 600;
+    padding-top: 10px;
+    border-top: 1px solid #e1e1e1;
+}
+.btnRemove{
+  color: #da4516;
+    border: 3px solid red;
+    background: #fff;
+    font-size: 14px;
+}
+.btnRemove:hover{
+  background: #e85022;
+  color: #fff;
+}
